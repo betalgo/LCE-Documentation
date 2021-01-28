@@ -1,5 +1,5 @@
 
-# LaserCatEyes DotNet SDK - currently in BETA program
+# LaserCatEyes DotNet HttpClient Listener - currently in BETA program
 
 We have two different DotNet sdk. 
 1. **Endpoint Listener** allows you to listen **incoming** requests to your application.

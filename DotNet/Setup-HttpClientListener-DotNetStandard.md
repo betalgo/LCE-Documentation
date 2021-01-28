@@ -1,5 +1,4 @@
-
-# LaserCatEyes DotNet SDK - currently in BETA program
+# LaserCatEyes DotNet HttpClient Listener DotNetStandard- currently in BETA program
 
 **HttpClientListener.DotNetStandard** allows you to listen **outgoing** requests from you application *(Also .Net core version is avaliable).*
 
