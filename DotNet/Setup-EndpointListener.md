@@ -1,4 +1,4 @@
-# LaserCatEyes DotNet Endpoint Listener - currently in BETA program
+Currently in BETA program - [Github](https://github.com/betalgo/LCE-DotNet-SDK)
 
 We have two different DotNet sdk. 
 1. **Endpoint Listener** allows you to listen **incoming** requests to your application.
@@ -7,7 +7,7 @@ We have two different DotNet sdk.
 You can use both of them to get full visibility on your application. 
 
 ## Installation & Implementation of EnpointListener
-1. LaserCatEyes is available through [Nuget](https://www.nuget.org/packages/LaserCatEyes.EndpointListener/). Install [LaserCatEyes.EndpointListener](https://www.nuget.org/packages/LaserCatEyes.EndpointListener/) from the package manager console:
+LaserCatEyes is available through [Nuget](https://www.nuget.org/packages/LaserCatEyes.EndpointListener/). Install [LaserCatEyes.EndpointListener](https://www.nuget.org/packages/LaserCatEyes.EndpointListener/) from the package manager console:
 ```
 PM> Install-Package LaserCatEyes.EndpointListener
 ```

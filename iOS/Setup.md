@@ -1,3 +1,5 @@
+Currently in BETA program - [Github](https://github.com/betalgo/LCE-iOS-SDK)
+
 ## Installation & Implementation 
 1. LaserCatEyes is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
