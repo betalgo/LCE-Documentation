@@ -16,14 +16,11 @@ PM> Install-Package LaserCatEyes.EndpointListener
 ```csharp
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
-        ...
         if (env.IsDevelopment())//This is a debugging tool, you don't want to run it in prodcution, right!?
         {
-           ... 
            //Seriously do NOT run it in production environment 
            app.UseLaserCatEyesEndpointListenerMiddleware();           
         }
-       ...
     }
 ```
 3. In ``Startup`` class ``ConfigureServices`` method inject Endpoint Listener
@@ -31,10 +28,8 @@ PM> Install-Package LaserCatEyes.EndpointListener
 ```csharp
     public void ConfigureServices(IServiceCollection services)
     {
-        ...
         if (env.IsDevelopment())//This is a debugging tool, you don't want to run it in prodcution, right!?
         {
-           ... 
            //Seriously do NOT run it in production environment 
            services.AddLaserCatEyesEndpointListener(MY_APP_KEY_FROM_LASER_CAT_EYES_PORTAL);
            //OR 
@@ -47,7 +42,6 @@ PM> Install-Package LaserCatEyes.EndpointListener
                option.BuildNumber = "1";
            });               
         }
-       ...
     }
 ```
 
