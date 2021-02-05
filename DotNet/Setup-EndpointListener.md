@@ -28,20 +28,16 @@ PM> Install-Package LaserCatEyes.EndpointListener
 ```csharp
     public void ConfigureServices(IServiceCollection services)
     {
-        if (env.IsDevelopment())//This is a debugging tool, you don't want to run it in prodcution, right!?
+        services.AddLaserCatEyesEndpointListener(MY_APP_KEY_FROM_LASER_CAT_EYES_PORTAL);
+        //OR 
+        //(more option will be available soon)
+        services.AddLaserCatEyesEndpointListener(option =>
         {
-           //Seriously do NOT run it in production environment 
-           services.AddLaserCatEyesEndpointListener(MY_APP_KEY_FROM_LASER_CAT_EYES_PORTAL);
-           //OR 
-           //(more option will be available soon)
-           services.AddLaserCatEyesEndpointListener(option =>
-           {
-               option.AppKey = MY_APP_KEY_FROM_LASER_CAT_EYES_PORTAL;
-               option.AspCoreEnvironment = "STAGE";
-               option.Version = "1.2.3.4";
-               option.BuildNumber = "1";
-           });               
-        }
+           option.AppKey = MY_APP_KEY_FROM_LASER_CAT_EYES_PORTAL;
+           option.AspCoreEnvironment = "STAGE";
+           option.Version = "1.2.3.4";
+           option.BuildNumber = "1";
+       });
     }
 ```
 
