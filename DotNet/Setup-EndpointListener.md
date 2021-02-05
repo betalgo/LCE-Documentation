@@ -12,26 +12,15 @@ LaserCatEyes is available through [Nuget](https://www.nuget.org/packages/LaserCa
 PM> Install-Package LaserCatEyes.EndpointListener
 ```
 
-2. In ``Startup`` class ``Configure`` method inject middleware
-```csharp
-    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-    {
-        if (env.IsDevelopment())//This is a debugging tool, you don't want to run it in prodcution, right!?
-        {
-           //Seriously do NOT run it in production environment 
-           app.UseLaserCatEyesEndpointListenerMiddleware();           
-        }
-    }
-```
-3. In ``Startup`` class ``ConfigureServices`` method inject Endpoint Listener
+2. In ``Startup`` class ``ConfigureServices`` method inject Endpoint Listener
 
 ```csharp
     public void ConfigureServices(IServiceCollection services)
     {
-        if (env.IsDevelopment())//This is a debugging tool, you don't want to run it in prodcution, right!?
+        if (_env.IsDevelopment())//This is a debugging tool, you don't want to run it in prodcution, right!?
         {
            //Seriously do NOT run it in production environment 
-           services.AddLaserCatEyesEndpointListener(MY_APP_KEY_FROM_LASER_CAT_EYES_PORTAL);
+            services.AddLaserCatEyesEndpointListener(MY_APP_KEY_FROM_LASER_CAT_EYES_PORTAL);
            //OR 
            //(more option will be available soon)
            services.AddLaserCatEyesEndpointListener(option =>
@@ -41,6 +30,17 @@ PM> Install-Package LaserCatEyes.EndpointListener
                option.Version = "1.2.3.4";
                option.BuildNumber = "1";
            });               
+        }
+    }
+```
+3. In ``Startup`` class ``Configure`` method inject middleware
+```csharp
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    {
+        if (env.IsDevelopment())//This is a debugging tool, you don't want to run it in prodcution, right!?
+        {
+           //Seriously do NOT run it in production environment 
+           app.UseLaserCatEyesEndpointListenerMiddleware();           
         }
     }
 ```
